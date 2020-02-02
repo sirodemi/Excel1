@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sheet.js サンプル</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        /* ファイル選択 */
+
+        /* http://cccabinet.jpn.org/bootstrap4/javascript/forms/file-browser */
+
+        .custom-file-input:lang(ja)~.custom-file-label::after {
+            content: "参照";
+        }
+
+        .custom-file {
+            overflow: hidden;
+        }
+
+        .custom-file-label {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>Sunyou Machine_Maintenance Report</h2>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Excelファイルを選択...</label>
+        </div>
+
+        <!--
+        <div>
+            <h3>結果</h3>
+            <pre id="result">ここにJSONを出力します</pre>
+        </div>
+        -->
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.11.19/xlsx.full.min.js"></script>
+
+    <script src="./sheet.js"></script>
+
+    <!--
+    <script src="./export.js"></script>
+    -->
+
+</body>
+
+</html>
