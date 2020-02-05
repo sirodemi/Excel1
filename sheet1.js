@@ -39,6 +39,10 @@
         // ワークブックのデータをjsonに変換
         function to_json(workbook) {
             var result = {};
+
+            console.log(result);
+
+
             workbook.SheetNames.forEach(function (sheetName) {
                 var roa = X.utils.sheet_to_json(
                     workbook.Sheets[sheetName],
@@ -60,6 +64,7 @@
                 for (var subItem in output[item]) {
                     for (var sub2Item in output[item][subItem]) {
                         cellData.push(output[item][subItem][sub2Item])
+                        console.log(output[item][subItem][sub2Item]);
                     }
                 }
             }
@@ -80,17 +85,30 @@
             document.body.appendChild(table);
 
             var html = "";                
-            for(j=0; j<20; j++){
+            for(j=0; j<5; j++){
                 var str1 = "";
                 var str2 = "";
+                var str3 = "";
+                var str4 = "";
 
                 //余白削除
-                tempStr=cellData[4 + j*2];
+                str1=cellData[j*4];
+                str2=cellData[1+j*4];
+                str3=cellData[2+j*4];
+                str4=cellData[3+j*4];
+                //str1 = tempStr;
+
+                /*
                 if(tempStr != undefined){
                     str1 = tempStr.replace(/\s+/g, "");
                 }
+                */
                 //現場名は余白の削除はしない
-                tempStr=cellData[5 + j*2];
+                //tempStr=cellData[1 + j*2];
+
+                //str2 = tempStr;
+
+                /*
                 if(j == 0){
                     str2 = tempStr;
                 }else{
@@ -98,15 +116,18 @@
                         str2 = tempStr.replace(/\s+/g, "");
                     }
                 }
+                */
 
                 //空白が続けば終了
-                if(str1=="" && str2==""){
+                if(str1==undefined && str2==undefined){
                     break;
                 }
 
                 html += `<tr>`
                 html += `<td>${str1}</td>`
                 html += `<td>${str2}</td>`
+                html += `<td>${str3}</td>`
+                html += `<td>${str4}</td>`
                 html += `</tr>`
             }
 
