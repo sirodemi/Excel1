@@ -23,6 +23,8 @@
                 makeData(output);
             };
             reader.readAsArrayBuffer(f);
+
+
         }
 
         // ファイルの読み込み
@@ -84,6 +86,7 @@
             // body のノードリストに登録する
             document.body.appendChild(table);
 
+
             var html = "";                
             for(j=0; j<5; j++){
                 var str1 = "";
@@ -91,7 +94,6 @@
                 var str3 = "";
                 var str4 = "";
 
-                //余白削除
                 str1=cellData[j*4];
                 str2=cellData[1+j*4];
                 str3=cellData[2+j*4];
